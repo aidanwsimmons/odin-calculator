@@ -126,6 +126,22 @@ btnDelete.addEventListener('click', () => {
     }
 })
 
+btnAdd.addEventListener('click', () => {
+    operator = '+'
+})
+
+btnSubtract.addEventListener('click', () => {
+    operator = '-'
+})
+
+btnMultiply.addEventListener('clcik', () => {
+    operator = '*'
+})
+
+btnDivide.addEventListener('click', () => {
+    operator = '/'
+})
+
 
 // function add {
 

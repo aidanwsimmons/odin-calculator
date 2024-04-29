@@ -1,7 +1,7 @@
 let num1 = 0
 let num2 
 let operator
-let displayVal
+let displayVal = 0
 
 const btn1 = document.querySelector('.one')
 const btn2 = document.querySelector('.two')
@@ -23,6 +23,101 @@ const btnClear = document.querySelector('.clear')
 const btnDelete = document.querySelector('.delete')
 const display1 = document.querySelector('.display-primary')
 const display2 = document.querySelector('.display-secondary')
+
+function updateDisplay1(){
+    display1.textContent = displayVal.toString()
+}
+
+function clearDisplay(){
+    displayVal = 0
+    updateDisplay1()
+}
+
+
+btn1.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 1
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '1')
+    }
+    updateDisplay1()
+})
+btn2.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 2
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '2')
+    }
+    updateDisplay1()
+})
+btn3.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 3
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '3')
+    }
+    updateDisplay1()
+})
+btn4.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 4
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '4')
+    }
+    updateDisplay1()
+})
+btn5.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 5
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '5')
+    }
+    updateDisplay1()
+})
+btn6.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 6
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '6')
+    }
+    updateDisplay1()
+})
+btn7.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 7
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '7')
+    }
+    updateDisplay1()
+})
+btn8.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 8
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '8')
+    }
+    updateDisplay1()
+})
+btn9.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 9
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '9')
+    }
+    updateDisplay1()
+})
+
+
+btnClear.addEventListener('click', clearDisplay)
 
 
 // function add {

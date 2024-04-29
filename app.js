@@ -192,22 +192,22 @@ btnDivide.addEventListener('click', () => {
 
 
 function add(num1, num2) {
-    displayVal = (num1 + num2).toString()
+    displayVal = (num1 + num2).toFixed(5).toString()
     updateDisplay1()
 }
 
 function subtract(num1, num2) {
-    displayVal = (num1 - num2).toString()
+    displayVal = (num1 - num2).toFixed(5).toString()
     updateDisplay1()
 }
 
 function multiply(num1, num2) {
-    displayVal = (num1 * num2).toString()
+    displayVal = (num1 * num2).toFixed(5).toString()
     updateDisplay1()
 }
 
 function divide(num1, num2) {
-    displayVal = (num1 / num2).toString()
+    displayVal = (num1 / num2).toFixed(5).toString()
     updateDisplay1()
 }
 

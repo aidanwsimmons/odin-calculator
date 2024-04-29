@@ -1,4 +1,5 @@
 let num1 = 0
+let num1Entered = false
 let num2 
 let operator
 let displayVal = 0
@@ -39,7 +40,6 @@ function clearDisplay(){
     updateDisplay1()
     updateDisplay2()
 }
-
 
 btn1.addEventListener('click', () => {
     if(displayVal == 0){
@@ -136,28 +136,40 @@ btnDelete.addEventListener('click', () => {
 btnAdd.addEventListener('click', () => {
     operator = '+'
     num1 = displayVal
+    num1Entered = true
     display2str = `${num1} +`
+    displayVal = 0
+    updateDisplay1()
     updateDisplay2()
 })
 
 btnSubtract.addEventListener('click', () => {
     operator = '-'
     num1 = displayVal
+    num1Entered = true
     display2str = `${num1} -`
+    displayVal = 0
+    updateDisplay1()
     updateDisplay2()
 })
 
 btnMultiply.addEventListener('click', () => {
     operator = '*'
     num1 = displayVal
+    num1Entered = true
     display2str = `${num1} x`
+    displayVal = 0
+    updateDisplay1()
     updateDisplay2()
 })
 
 btnDivide.addEventListener('click', () => {
     operator = '/'
     num1 = displayVal
+    num1Entered = true
     display2str = `${num1} ÷`
+    displayVal = 0
+    updateDisplay1()
     updateDisplay2()
 })
 
@@ -203,7 +215,12 @@ function operate(operator, num1, num2) {
 }
 
 btnEquals.addEventListener('click', () => {
+    if(operator){
+        num2 = displayVal
+    }
     if(num1 && num2 && operator){
         operate(operator, num1, num2)
+        display2str += ` ${num2} =`
+        updateDisplay2()
     }
 })

@@ -25,7 +25,7 @@ const display1 = document.querySelector('.display-primary')
 const display2 = document.querySelector('.display-secondary')
 
 function updateDisplay1(){
-    display1.textContent = displayVal.toString()
+    display1.textContent = displayVal
 }
 
 function clearDisplay(){
@@ -118,6 +118,13 @@ btn9.addEventListener('click', () => {
 
 
 btnClear.addEventListener('click', clearDisplay)
+
+btnDelete.addEventListener('click', () => {
+    if(displayVal !== 0){
+        displayVal = Number(displayVal.toString().slice(0, displayVal.toString().length -1))
+        updateDisplay1()
+    }
+})
 
 
 // function add {

@@ -132,17 +132,14 @@ btnAdd.addEventListener('click', () => {
 
 btnSubtract.addEventListener('click', () => {
     operator = '-'
-    console.log(operator)
 })
 
 btnMultiply.addEventListener('click', () => {
     operator = '*'
-    console.log(operator)
 })
 
 btnDivide.addEventListener('click', () => {
     operator = '/'
-    console.log(operator)
 })
 
 

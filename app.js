@@ -21,6 +21,8 @@ const btnEquals = document.querySelector('.equals')
 const btnPoint = document.querySelector('.point')
 const btnClear = document.querySelector('.clear')
 const btnDelete = document.querySelector('.delete')
+const display1 = document.querySelector('.display-primary')
+const display2 = document.querySelector('.display-secondary')
 
 
 // function add {

@@ -1,5 +1,4 @@
 let num1 = 0
-let num1Entered = false
 let num2 
 let operator
 let displayVal = 0
@@ -125,6 +124,15 @@ btn9.addEventListener('click', () => {
     }
     updateDisplay1()
 })
+btn0.addEventListener('click', () => {
+    if(displayVal == 0){
+        displayVal = 0
+    }
+    else{
+        displayVal = Number(displayVal.toString() + '0')
+    }
+    updateDisplay1()
+})
 
 
 btnClear.addEventListener('click', clearDisplay)
@@ -221,7 +229,7 @@ btnEquals.addEventListener('click', () => {
     if(operator){
         num2 = displayVal
     }
-    if(num1 && num2 && operator){
+    if(num1 != null && num2 != null && operator){
         operate(operator, num1, num2)
         display2str += ` ${num2} =`
         updateDisplay2()

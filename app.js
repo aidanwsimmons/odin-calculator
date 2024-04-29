@@ -222,5 +222,8 @@ btnEquals.addEventListener('click', () => {
         operate(operator, num1, num2)
         display2str += ` ${num2} =`
         updateDisplay2()
+        num2 = null
+        num1 = displayVal
+        operator = null
     }
 })

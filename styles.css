@@ -37,13 +37,15 @@ body {
 
 .display-secondary {
     font-weight: 600;
-    height: 40px;
-    margin-bottom: -10px;
+    font-size: 22px;
+    min-height: 30px;
+    margin-bottom: -30px;
+    margin-top: 5px;
 }
 
 .display-primary {
     height: 70px;
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 600;
 }
 

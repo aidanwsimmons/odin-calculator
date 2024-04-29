@@ -1,7 +1,7 @@
 let num1 = 0
 let num2 
 let operator
-let displayVal = 0
+let displayVal = '0'
 let display2str = ''
 
 const btn1 = document.querySelector('.one')
@@ -34,7 +34,7 @@ function updateDisplay2(){
 }
 
 function clearDisplay(){
-    displayVal = 0
+    displayVal = '0'
     display2str = ''
     num1 = 0
     num2 = null
@@ -44,164 +44,170 @@ function clearDisplay(){
 }
 
 btn1.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 1
+    if(displayVal == '0'){
+        displayVal = '1'
     }
     else{
-        displayVal = Number(displayVal.toString() + '1')
+        displayVal += '1'
     }
     updateDisplay1()
 })
 btn2.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 2
+    if(displayVal == '0'){
+        displayVal = '2'
     }
     else{
-        displayVal = Number(displayVal.toString() + '2')
+        displayVal += '2'
     }
     updateDisplay1()
 })
 btn3.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 3
+    if(displayVal == '0'){
+        displayVal = '3'
     }
     else{
-        displayVal = Number(displayVal.toString() + '3')
+        displayVal += '3'
     }
     updateDisplay1()
 })
 btn4.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 4
+    if(displayVal == '0'){
+        displayVal = '4'
     }
     else{
-        displayVal = Number(displayVal.toString() + '4')
+        displayVal += '4'
     }
     updateDisplay1()
 })
 btn5.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 5
+    if(displayVal == '0'){
+        displayVal = '5'
     }
     else{
-        displayVal = Number(displayVal.toString() + '5')
+        displayVal += '5'
     }
     updateDisplay1()
 })
 btn6.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 6
+    if(displayVal == '0'){
+        displayVal = '6'
     }
     else{
-        displayVal = Number(displayVal.toString() + '6')
+        displayVal += '6'
     }
     updateDisplay1()
 })
 btn7.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 7
+    if(displayVal == '0'){
+        displayVal = '7'
     }
     else{
-        displayVal = Number(displayVal.toString() + '7')
+        displayVal += '7'
     }
     updateDisplay1()
 })
 btn8.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 8
+    if(displayVal == '0'){
+        displayVal = '8'
     }
     else{
-        displayVal = Number(displayVal.toString() + '8')
+        displayVal += '8'
     }
     updateDisplay1()
 })
 btn9.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 9
+    if(displayVal == '0'){
+        displayVal = '9'
     }
     else{
-        displayVal = Number(displayVal.toString() + '9')
+        displayVal += '9'
     }
     updateDisplay1()
 })
 btn0.addEventListener('click', () => {
-    if(displayVal == 0){
-        displayVal = 0
+    if(displayVal == '0'){
+        displayVal = '0'
     }
     else{
-        displayVal = Number(displayVal.toString() + '0')
+        displayVal += '0'
     }
     updateDisplay1()
 })
-
+btnPoint.addEventListener('click', () => {
+    // Check if displayVal already contains a decimal point
+    if (!displayVal.includes('.')) {
+        displayVal += '.'
+        updateDisplay1();
+    }
+})
 
 btnClear.addEventListener('click', clearDisplay)
 
 btnDelete.addEventListener('click', () => {
-    if(displayVal !== 0){
-        displayVal = Number(displayVal.toString().slice(0, displayVal.toString().length -1))
+    if(displayVal !== '0'){
+        displayVal = displayVal.slice(0, displayVal.toString().length -1)
         updateDisplay1()
     }
 })
 
 btnAdd.addEventListener('click', () => {
     operator = '+'
-    num1 = displayVal
+    num1 = Number(displayVal)
     num1Entered = true
     display2str = `${num1} +`
-    displayVal = 0
+    displayVal = '0'
     updateDisplay1()
     updateDisplay2()
 })
 
 btnSubtract.addEventListener('click', () => {
     operator = '-'
-    num1 = displayVal
+    num1 = Number(displayVal)
     num1Entered = true
     display2str = `${num1} -`
-    displayVal = 0
+    displayVal = '0'
     updateDisplay1()
     updateDisplay2()
 })
 
 btnMultiply.addEventListener('click', () => {
     operator = '*'
-    num1 = displayVal
+    num1 = Number(displayVal)
     num1Entered = true
     display2str = `${num1} x`
-    displayVal = 0
+    displayVal = '0'
     updateDisplay1()
     updateDisplay2()
 })
 
 btnDivide.addEventListener('click', () => {
     operator = '/'
-    num1 = displayVal
+    num1 = Number(displayVal)
     num1Entered = true
     display2str = `${num1} ÷`
-    displayVal = 0
+    displayVal = '0'
     updateDisplay1()
     updateDisplay2()
 })
 
 
 function add(num1, num2) {
-    displayVal = num1 + num2
+    displayVal = (num1 + num2).toString()
     updateDisplay1()
 }
 
 function subtract(num1, num2) {
-    displayVal = num1 - num2
+    displayVal = (num1 - num2).toString()
     updateDisplay1()
 }
 
 function multiply(num1, num2) {
-    displayVal = num1 * num2
+    displayVal = (num1 * num2).toString()
     updateDisplay1()
 }
 
 function divide(num1, num2) {
-    displayVal = num1 / num2
+    displayVal = (num1 / num2).toString()
     updateDisplay1()
 }
 
@@ -227,14 +233,14 @@ function operate(operator, num1, num2) {
 
 btnEquals.addEventListener('click', () => {
     if(operator){
-        num2 = displayVal
+        num2 = Number(displayVal)
     }
     if(num1 != null && num2 != null && operator){
         operate(operator, num1, num2)
         display2str += ` ${num2} =`
         updateDisplay2()
         num2 = null
-        num1 = displayVal
+        num1 = Number(displayVal)
         operator = null
     }
 })

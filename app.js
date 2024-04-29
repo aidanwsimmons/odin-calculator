@@ -37,6 +37,9 @@ function updateDisplay2(){
 function clearDisplay(){
     displayVal = 0
     display2str = ''
+    num1 = 0
+    num2 = null
+    operator = null
     updateDisplay1()
     updateDisplay2()
 }

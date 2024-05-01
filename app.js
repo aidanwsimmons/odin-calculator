@@ -235,24 +235,57 @@ btnDivide.addEventListener('click', () => {
     updateDisplay2()
 })
 
+function formatNumber(number, maxDigits) {
+    let absNumber = Math.abs(number);
+    let exponent = 0;
+
+    if (absNumber >= 1) {
+        while (absNumber >= 10) {
+            absNumber /= 10;
+            exponent++;
+        }
+    } else {
+        while (absNumber < 1) {
+            absNumber *= 10;
+            exponent--;
+        }
+    }
+
+    let roundedNumber = absNumber.toFixed(maxDigits - 1);
+    return roundedNumber + "e" + exponent;
+}
+
 
 function add(num1, num2) {
     displayVal = (num1 + num2).toString()
+    if(displayVal.length > 15){
+        displayVal = formatNumber(Number(displayVal), 10)
+    }
     updateDisplay1()
 }
 
 function subtract(num1, num2) {
     displayVal = (num1 - num2).toString()
+    if(displayVal.length > 15){
+        displayVal = formatNumber(Number(displayVal), 10)
+    }
     updateDisplay1()
 }
 
 function multiply(num1, num2) {
     displayVal = (num1 * num2).toString()
+    if(displayVal.length > 15){
+        displayVal = formatNumber(Number(displayVal), 10)
+        console.log(displayVal)
+    }
     updateDisplay1()
 }
 
 function divide(num1, num2) {
     displayVal = (Math.round((num1 / num2) * 10000) / 10000).toString()
+    if(displayVal.length > 15){
+        displayVal = formatNumber(Number(displayVal), 10)
+    }
     updateDisplay1()
 }
 

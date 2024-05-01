@@ -3,6 +3,7 @@ let num2
 let operator
 let displayVal = '0'
 let display2str = ''
+let shouldClear = false
 
 const btn1 = document.querySelector('.one')
 const btn2 = document.querySelector('.two')
@@ -44,6 +45,10 @@ function clearDisplay(){
 }
 
 btn1.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '1'
     }
@@ -53,6 +58,10 @@ btn1.addEventListener('click', () => {
     updateDisplay1()
 })
 btn2.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '2'
     }
@@ -62,6 +71,10 @@ btn2.addEventListener('click', () => {
     updateDisplay1()
 })
 btn3.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '3'
     }
@@ -71,6 +84,10 @@ btn3.addEventListener('click', () => {
     updateDisplay1()
 })
 btn4.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '4'
     }
@@ -80,6 +97,10 @@ btn4.addEventListener('click', () => {
     updateDisplay1()
 })
 btn5.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '5'
     }
@@ -89,6 +110,10 @@ btn5.addEventListener('click', () => {
     updateDisplay1()
 })
 btn6.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '6'
     }
@@ -98,6 +123,10 @@ btn6.addEventListener('click', () => {
     updateDisplay1()
 })
 btn7.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '7'
     }
@@ -107,6 +136,10 @@ btn7.addEventListener('click', () => {
     updateDisplay1()
 })
 btn8.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '8'
     }
@@ -116,6 +149,10 @@ btn8.addEventListener('click', () => {
     updateDisplay1()
 })
 btn9.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '9'
     }
@@ -125,6 +162,10 @@ btn9.addEventListener('click', () => {
     updateDisplay1()
 })
 btn0.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     if(displayVal == '0'){
         displayVal = '0'
     }
@@ -134,6 +175,10 @@ btn0.addEventListener('click', () => {
     updateDisplay1()
 })
 btnPoint.addEventListener('click', () => {
+    if(shouldClear){
+        clearDisplay()
+        shouldClear = false
+    }
     // Check if displayVal already contains a decimal point
     if (!displayVal.includes('.')) {
         displayVal += '.'
@@ -242,5 +287,6 @@ btnEquals.addEventListener('click', () => {
         num2 = null
         num1 = Number(displayVal)
         operator = null
+        shouldClear = true
     }
 })
